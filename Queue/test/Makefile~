@@ -1,0 +1,19 @@
+#
+#
+queue_test: ../obj/IQueueTest.o ../obj/IQueue.o ../../Node/obj/INode.o
+	g++ ../obj/IQueueTest.o ../obj/IQueue.o ../../Node/obj/INode.o -o queue_test
+
+#
+#
+../obj/IQueueTest.o: IQueueTest.cpp
+	gcc -c IQueueTest.cpp
+
+#
+#
+../obj/IQueue.o: ../src/IQueue.cpp ../src/IQueue.h
+	gcc -c ../src/IQueue.cpp
+
+#
+#
+../../Node/obj/INode.o: ../../Node/src/INode.cpp ../../Node/src/INode.h
+	g++ -c ../../Node/src/INode.cpp

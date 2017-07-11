@@ -1,0 +1,20 @@
+# Creates an executable whenever IStackTest \
+ or INode object files have been manipulated
+output: IStack.o ../Node/INode.o IStackTest.o
+	g++ IStack.o ../Node/INode.o IStackTest.o -o stack_test
+
+# Creates an IStackTest object file whenever either
+# the IStack .cpp or .h files, in addition to the IStackTest
+# .cpp file changes 
+IStackTest.o: IStack.cpp IStack.h IStackTest.cpp
+	g++ -c IStackTest.cpp
+
+# Creates an IStackTest object file whenever
+# the IStack .cpp or .h files have been changed
+IStack.o: IStack.cpp IStack.h
+	g++ -c IStack.cpp
+
+# Creates an INode object file whenever
+# the INode .cpp or .h files have been changed 
+../Node/INode.o: ../Node/INode.cpp ../Node/INode.h 
+	g++ -c ../Node/INode.cpp

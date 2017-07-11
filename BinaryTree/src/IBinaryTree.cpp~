@@ -1,0 +1,94 @@
+#include "IBinaryTree.h"
+
+IBinaryTree::IBinaryTree()
+{
+  treeCount = 0;
+  treeDepth = 0;
+  top = NULL;
+}
+
+void IBinaryTree::Insert(ITreeNode& treeNode)
+{
+  if(top == NULL)
+  {
+    top = &treeNode;
+    treeCount++;
+  }
+  else if (top != NULL){ ITreeNode* iterator = top;  InsertRecursively(treeNode, *iterator); }
+}
+
+ITreeNode* IBinaryTree::InsertRecursively(ITreeNode& newNode, ITreeNode& iterator)
+{
+  std::cout << "Runtime Head: " << iterator.GetValue() << std::endl;
+  if(iterator.GetLeft() == NULL) std::cout << "Runtime Left: NULL" << std::endl;
+  else std::cout << "Runtime Left: " << iterator.GetLeft()->GetValue() << std::endl;
+  if(iterator.GetRight() == NULL) std::cout << "Runtime Right: NULL" << std::endl;
+  else std::cout << "Runtime Right: " << iterator.GetRight()->GetValue() << std::endl;
+  
+  if(newNode.GetValue() < iterator.GetValue())
+  {
+    if(iterator.GetLeft() == NULL)
+    {
+      iterator.SetLeft(newNode);
+      std::cout << "Setting node of value " << newNode.GetValue() << " to the left of node " << iterator.GetValue() << std::endl;
+      std::cout << "+1 to Node Count" << std::endl;
+      treeCount++; 
+    }
+    else if (iterator.GetLeft() != NULL)
+    {
+      std::cout << "Going to search node - " << (*(iterator.GetLeft())).GetValue() << std::endl;
+      InsertRecursively(newNode, *(iterator.GetLeft()));
+    }
+  }
+  else if (newNode.GetValue() >= iterator.GetValue())
+  {
+    if(iterator.GetRight() == NULL)
+    {
+      iterator.SetRight(newNode);
+      std::cout << "Setting node of value " << newNode.GetValue() << " to the right of node " << iterator.GetValue() << std::endl;
+      std::cout << "+1 to NodeCount" << std::endl;
+      treeCount++; 
+    }
+    else if (iterator.GetLeft() != NULL)
+    {
+      std::cout << "Going to search node - " << (*(iterator.GetRight())).GetValue() << std::endl; 
+      InsertRecursively(newNode, *(iterator.GetRight()));
+    }
+  }
+}
+
+void IBinaryTree::InorderSearch()
+{
+  std::string inorderContents;
+  ITreeNode* iterator = top; 
+  InorderSearchRecursively(inorderContents, *iterator);
+  std::cout << "Inorder Search: " << inorderContents << std::endl; 
+}
+
+void IBinaryTree::InorderSearchRecursively(std::string& string, ITreeNode& node)
+{
+    std::cout << "Parent: " << node.GetValue() << std::endl; 
+
+    if(node.GetLeft() == NULL) std::cout << "Left: NULL" << std::endl;
+    if(node.GetLeft() != NULL) std::cout << "Left: " << node.GetLeft()->GetValue() << std::endl;
+
+    if(node.GetRight() == NULL) std::cout << "Right: NULL" << std::endl;
+    if(node.GetRight() != NULL) std::cout << "Right: " << node.GetRight()->GetValue() << std::endl; 
+
+    if(node.GetLeft() != NULL) InorderSearchRecursively(string, *(node.GetLeft()));
+    itoa(node.GetValue(), string, 10);
+    if(node.GetRight() != NULL) InorderSearchRecursively(string, *(node.GetRight()));  
+}
+
+void IBinaryTree::PreorderSearch()
+{
+  // root left right 
+}
+
+void IBinaryTree::PostorderSearch()
+{
+  // left right root 
+}
+
+int IBinaryTree::GetTreeDepth() { return treeDepth; }
+int IBinaryTree::GetTreeCount() { return treeCount; } 

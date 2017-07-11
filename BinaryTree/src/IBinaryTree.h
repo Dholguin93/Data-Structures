@@ -1,0 +1,29 @@
+#ifndef _IBINARYTREE_H_INCLUDED
+
+#define _IBINARYTREE_H_INCLUDED
+
+#include "../../TreeNode/src/ITreeNode.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <sstream> 
+class IBinaryTree
+{
+ private:
+  int treeCount, treeDepth;
+  ITreeNode* top; 
+ public:
+  IBinaryTree();
+  void Insert(ITreeNode& treeNode);
+  ITreeNode* InsertRecursively(ITreeNode& newNode, ITreeNode& iterator);
+  int GetTreeDepth();
+  int GetTreeCount(); 
+  int InorderSearch();
+  void InorderSearchRecursively(std::ostringstream& string, ITreeNode& node); 
+  int PreorderSearch();
+  void PreorderSearchRecursively(std::ostringstream& string, ITreeNode& node); 
+  int PostorderSearch();
+  void PostorderSearchRecursively(std::ostringstream& string, ITreeNode& node); 
+};
+
+
+#endif

@@ -1,0 +1,11 @@
+binary_tree_test: ../obj/IBinaryTreeTest.o ../obj/IBinaryTree.o ../../TreeNode/obj/ITreeNode.o
+	g++ ../obj/IBinaryTreeTest.o ../obj/IBinaryTree.o ../../TreeNode/obj/ITreeNode.o -o binary_tree_test
+
+../obj/IBinaryTreeTest.o: IBinaryTreeTest.cpp
+	g++ -c IBinaryTreeTest.cpp -o ../obj/IBinaryTreeTest.o
+
+../obj/IBinaryTree.o: ../src/IBinaryTree.h ../src/IBinaryTree.cpp
+	g++ -c ../src/IBinaryTree.cpp -o ../obj/IBinaryTree.o
+
+../../TreeNode/obj/ITreeNode.o: ../../TreeNode/src/ITreeNode.h ../../TreeNode/src/ITreeNode.cpp
+	g++ -c -o ../../TreeNode/src/ITreeNode.cpp ../../TreeNode/obj/ITreeNode.o

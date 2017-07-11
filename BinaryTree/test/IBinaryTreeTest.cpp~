@@ -1,0 +1,25 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+#include "../src/IBinaryTree.h"
+#include "../../TreeNode/src/ITreeNode.h"
+#define NUMBEROFENTRIES 12
+
+int main (int argc, const char* argv[])
+{
+  srand((int)time(0));
+
+  std::cout << "Created a IBinaryTree" << std::endl;
+  IBinaryTree binaryTree;
+
+  for(int i = 0; i < NUMBEROFENTRIES; i++)
+  {
+    ITreeNode* treeNode = new ITreeNode((rand() % 100) + 1);
+    std::cout << "Inserting TreeNode of value " << treeNode->GetValue() << " into Binary Tree" << std::endl; 
+    binaryTree.Insert(*treeNode);
+  }
+
+  std::cout << "Binary Tree's Depth: " << binaryTree.GetTreeDepth() << std::endl;
+  std::cout << "Binary Tree's Node Count: " << binaryTree.GetTreeCount() << std::endl;
+  binaryTree.InorderSearch();
+}
