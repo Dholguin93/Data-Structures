@@ -1,3 +1,10 @@
+/* * * * * * * * * * * * * * * 
+ * Author: Diego Holguin
+ * Last Updated: July 12, 2017
+ * Purpose: To define the implementation of the IBinaryTree class
+ * Note: The 'I' in IBinaryTree represents Integer .... 
+ * * * * * * * * * * * * * * */
+
 #include "IBinaryTree.h"
 
 // #define DEBUG 

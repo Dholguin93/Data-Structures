@@ -1,9 +1,3 @@
-/* * * * * * * * * * * * * * * * * 
- * Author: Diego Holguin
- * Last Updated: June 9, 2017
- * Purpose: To test the ITreeNode class. 
- * * * * * * * * * * * * * * * * */
-
 #include <cstdlib>
 #include <ctime>
 #include <iostream>

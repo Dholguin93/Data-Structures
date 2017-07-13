@@ -1,3 +1,9 @@
+/* * * * * * * * * * * * * *
+ * Author: Diego Holguin
+ * Last Updated: June 11, 2012
+ * Purpose: To define, for the compiler, the class data for the IBinaryTree class. 
+ * * * * * * * * * * * * * */
+
 #ifndef _IBINARYTREE_H_INCLUDED
 
 #define _IBINARYTREE_H_INCLUDED
@@ -5,7 +11,7 @@
 #include "../../TreeNode/src/ITreeNode.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <string> 
+#include <sstream> 
 class IBinaryTree
 {
  private:
@@ -17,10 +23,12 @@ class IBinaryTree
   ITreeNode* InsertRecursively(ITreeNode& newNode, ITreeNode& iterator);
   int GetTreeDepth();
   int GetTreeCount(); 
-  void InorderSearch();
-  void InorderSearchRecursively(std::string& string, ITreeNode& node); 
-  void PreorderSearch();
-  void PostorderSearch();  
+  int InorderSearch();
+  void InorderSearchRecursively(std::ostringstream& string, ITreeNode& node); 
+  int PreorderSearch();
+  void PreorderSearchRecursively(std::ostringstream& string, ITreeNode& node); 
+  int PostorderSearch();
+  void PostorderSearchRecursively(std::ostringstream& string, ITreeNode& node); 
 };
 
 

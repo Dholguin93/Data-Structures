@@ -1,9 +1,3 @@
-/* * * * * * * * * * * * * * * *
- * Author: Diego Holguin
- * Last Updated: June 2, 2017
- * Purpose: To define, for the compiler, the class data for the IStack class. 
- * * * * * * * * * * * * * * * */
-
 #ifndef _ISTACK_H_INCLUDED_
 
 #define _ISTACK_H_INCLUDED_

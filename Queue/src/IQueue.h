@@ -1,6 +1,6 @@
 /* Author: Diego Holguin
  * Date: June 29, 2017
- * Purpose: Header file for the IQueue class 
+ * Purpose: To define, for the compiler, the data of the IQueue class.  
  */
 
 #ifndef _IQUEUE_H_INCLUDED_

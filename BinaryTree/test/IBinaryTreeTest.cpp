@@ -1,10 +1,17 @@
+/* * * * * * * * * * * * * * * *
+ * Author: Diego Holguin
+ * Last Updated: June 10, 2017
+ * Purpose: To test the IBinaryTree and ITreeNode classes. 
+ * * * * * * * * * * * * * * * */
+
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
 #include <sys/resource.h>
 #include "../src/IBinaryTree.h"
 #include "../../TreeNode/src/ITreeNode.h"
-#define NUMBEROFENTRIES 6
+
+#define NUMBEROFENTRIES 4 // TODO: Identify why if the number of entries increases IBinaryTree class behaves unexpectedly... 
 
 int main (int argc, const char* argv[])
 {

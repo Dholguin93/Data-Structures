@@ -1,6 +1,6 @@
 /* Author: Diego Holguin
  * Date: June 29, 2017
- * Purpose: To define the implementation of the IQueue class 
+ * Purpose: Implementation of the IQueue class 
  */
 
 #include "IQueue.h"
